@@ -10,16 +10,16 @@ This is how to set up Prometheus and Grafana for monitoring a Kubernetes cluster
 # Step 1: Start Minikube
 
 First, ensure that Minikube is running:
-minikube start
+- minikube start
 
 # Step 2: Install Prometheus using Helm
 
 Add the Prometheus Helm repository:
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-helm repo update
+- helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+- helm repo update
 
 Install the Prometheus stack:
-helm install prometheus prometheus-community/kube-prometheus-stack
+- helm install prometheus prometheus-community/kube-prometheus-stack
 
 Verify that Prometheus components are deployed:
 - kubectl get deploy
@@ -40,8 +40,8 @@ Open the browser and navigate to --> http://<minikube_ip>:<node_port>
 
 The default Grafana login credentials are:
 
-Username: admin
-Password: admin
+- Username: admin
+- Password: admin
 
 # Step 5: Access Prometheus and Grafana Dashboards
 Accessing Prometheus by running the following command and then navigating to the URL provided:
@@ -49,7 +49,7 @@ kubectl port-forward svc/prometheus-kube-prometheus-prometheus 9090
 
 To access Grafana:
 
-kubectl port-forward svc/prometheus-grafana 3000
+- kubectl port-forward svc/prometheus-grafana 3000
 
 # Step 6: Import Dashboards in Grafana
 
