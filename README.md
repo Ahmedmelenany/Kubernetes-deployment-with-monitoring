@@ -74,5 +74,5 @@ Import community dashboards like:
 # Step 8: Clean Up resourses
 
 To uninstall Prometheus and Grafana:
-helm uninstall prometheus
-minikube stop
+- helm uninstall prometheus
+- minikube stop
