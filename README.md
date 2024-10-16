@@ -28,18 +28,22 @@ Verify that Prometheus components are deployed:
 - kubectl get svc
 ![Screenshot 2024-10-16 182523](https://github.com/user-attachments/assets/9c715239-a632-401d-849b-a6f179fc424a)
 
-# Step 3: Install Grafana using Helm
+# Step 3: Adding a new target
+- we can add new target by add a new service monitor and expose it to prometheus
+![Screenshot 2024-10-16 182708](https://github.com/user-attachments/assets/b53b242a-0371-45e2-9823-f94c10575429)
+
+
+# Step 4: Install Grafana using Helm
 Grafana is included with the Prometheus Helm chart:
 
-kubectl get svc 
-Then, open the browser and navigate to --> http://<minikube_ip>:<node_port>
+Open the browser and navigate to --> http://<minikube_ip>:<node_port>
 
 The default Grafana login credentials are:
 
 Username: admin
 Password: admin
 
-# Step 4: Access Prometheus and Grafana Dashboards
+# Step 5: Access Prometheus and Grafana Dashboards
 Accessing Prometheus by running the following command and then navigating to the URL provided:
 kubectl port-forward svc/prometheus-kube-prometheus-prometheus 9090
 
@@ -47,14 +51,14 @@ To access Grafana:
 
 kubectl port-forward svc/prometheus-grafana 3000
 
-# Step 5: Import Dashboards in Grafana
+# Step 6: Import Dashboards in Grafana
 
 Once Grafana is up and running:
 - Log in using the default credentials.
 - Add Prometheus as a data source by providing the URL http://localhost:9090
 - Import pre-built dashboards or create custom dashboards to visualize the metrics you are interested in.
 
-# Step 6: Explore Dashboards
+# Step 7: Explore Dashboards
 
 Prometheus is now scraping data from minikube, and we can explore that data through Grafana dashboards.
 
@@ -67,7 +71,7 @@ Import community dashboards like:
 
 ![Screenshot 2024-10-16 010250](https://github.com/user-attachments/assets/1a48d71f-56c0-487f-b57e-32e1020fe373)
 
-# Step 7: Clean Up resourses
+# Step 8: Clean Up resourses
 
 To uninstall Prometheus and Grafana:
 helm uninstall prometheus
